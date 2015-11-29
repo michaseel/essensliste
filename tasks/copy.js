@@ -25,5 +25,18 @@ module.exports = {
         '**/*.map'
       ]
     }]
+  },
+  ghPages: {
+    files: [{
+      expand: true,
+      dot: true,
+      cwd: '<%= folders.dist %>',
+      dest: '.',
+      src: [
+        'index.html',
+        '.htaccess',
+        '0_basics/*.js'
+      ]
+    }]
   }
 };

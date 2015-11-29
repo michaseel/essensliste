@@ -28,6 +28,7 @@ build:
   - rev
   - usemin
   - inline
+  - copy:ghPages
 
 test:
   - eslint
