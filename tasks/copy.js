@@ -34,8 +34,7 @@ module.exports = {
       dest: '.',
       src: [
         'index.html',
-        '.htaccess',
-        '0_basics/*.js'
+        '.htaccess'
       ]
     }]
   }

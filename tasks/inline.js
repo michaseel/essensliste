@@ -8,7 +8,7 @@ module.exports = {
     src: [ 'dist/index.html' ],
     options:{
       uglify: true,
-      tag: '.css'
+      tag: '0_basics'
     }
   }
 };
