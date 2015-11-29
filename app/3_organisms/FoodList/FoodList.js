@@ -9,6 +9,16 @@ let FoodList = React.createClass({
     var foodNodes = this.props.data.map(function (food, index) {
       return <Food key={index} author={food.author}>{food.text}</Food>;
     });
-    return <div className="FoodList list-group">{foodNodes}</div>;
+    if(!foodNodes.length){
+      return(
+        <div className="FoodList list-group">
+          <div className="Food list-group-item">Noch keine Einträge…</div>
+        </div>
+        );
+    }
+    else
+    {
+      return <div className="FoodList list-group">{foodNodes}</div>;
+    }
   }
 });

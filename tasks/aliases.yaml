@@ -19,15 +19,15 @@ build:
   - babel
   - sass
   - postcss:dist
-  - parallelize:jade
+  - jade
   - copy:dist
   - useminPrepare
   - concat
   - uglify
-  - imagemin
-  - svgmin
   - htmlmin
+  - rev
   - usemin
+  - inline
 
 test:
   - eslint

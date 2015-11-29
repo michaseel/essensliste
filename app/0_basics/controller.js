@@ -26,16 +26,16 @@ var FoodBox = React.createClass({
     return (
       <div className="foodListApp">
 
-        <div className="row">
-          <div className="col-sm-7">
-            <h2>Essensliste</h2>
-            <FoodList data={this.state.data} />
-          </div>
-          <div className="col-sm-5">
-            <h2>Eintragen</h2>
-            <FoodForm onFoodSubmit={this.handleFoodSubmit} />
-          </div>
+        <div className="FoodListContainer">
+          <h2>Essensliste</h2>
+          <FoodList data={this.state.data} />
         </div>
+
+        <div className="FoodFormContainer">
+          <h2>Neuer Eintrag</h2>
+          <FoodForm onFoodSubmit={this.handleFoodSubmit} />
+        </div>
+
     </div>
     );
   }

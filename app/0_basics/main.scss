@@ -2,40 +2,40 @@
 
 // Core variables and mixins
 @import "../../bower_components/bootstrap/scss/variables";
-@import "../../bower_components/bootstrap/scss/mixins";
+//@import "../../bower_components/bootstrap/scss/mixins";
 
 // // Reset and dependencies
-@import "../../bower_components/bootstrap/scss/normalize";
-@import "../../bower_components/bootstrap/scss/print";
+//@import "../../bower_components/bootstrap/scss/normalize";
+//@import "../../bower_components/bootstrap/scss/print";
 
 // Core CSS
-@import "../../bower_components/bootstrap/scss/reboot";
-@import "../../bower_components/bootstrap/scss/type";
-@import "../../bower_components/bootstrap/scss/images";
-@import "../../bower_components/bootstrap/scss/code";
-@import "../../bower_components/bootstrap/scss/grid";
-@import "../../bower_components/bootstrap/scss/tables";
-@import "../../bower_components/bootstrap/scss/forms";
-@import "../../bower_components/bootstrap/scss/buttons";
+//@import "../../bower_components/bootstrap/scss/reboot";
+//@import "../../bower_components/bootstrap/scss/type";
+//@import "../../bower_components/bootstrap/scss/images";
+//@import "../../bower_components/bootstrap/scss/code";
+//@import "../../bower_components/bootstrap/scss/grid";
+//@import "../../bower_components/bootstrap/scss/tables";
+//@import "../../bower_components/bootstrap/scss/forms";
+//@import "../../bower_components/bootstrap/scss/buttons";
 
 // // Components
-@import "../../bower_components/bootstrap/scss/animation";
-@import "../../bower_components/bootstrap/scss/dropdown";
-@import "../../bower_components/bootstrap/scss/button-group";
-@import "../../bower_components/bootstrap/scss/input-group";
-@import "../../bower_components/bootstrap/scss/custom-forms";
-@import "../../bower_components/bootstrap/scss/nav";
-@import "../../bower_components/bootstrap/scss/navbar";
-@import "../../bower_components/bootstrap/scss/card";
-@import "../../bower_components/bootstrap/scss/breadcrumb";
-@import "../../bower_components/bootstrap/scss/pagination";
-@import "../../bower_components/bootstrap/scss/pager";
-@import "../../bower_components/bootstrap/scss/labels";
+//@import "../../bower_components/bootstrap/scss/animation";
+//@import "../../bower_components/bootstrap/scss/dropdown";
+//@import "../../bower_components/bootstrap/scss/button-group";
+//@import "../../bower_components/bootstrap/scss/input-group";
+//@import "../../bower_components/bootstrap/scss/custom-forms";
+//@import "../../bower_components/bootstrap/scss/nav";
+//@import "../../bower_components/bootstrap/scss/navbar";
+//@import "../../bower_components/bootstrap/scss/card";
+//@import "../../bower_components/bootstrap/scss/breadcrumb";
+//@import "../../bower_components/bootstrap/scss/pagination";
+//@import "../../bower_components/bootstrap/scss/pager";
+//@import "../../bower_components/bootstrap/scss/labels";
 //@import "../../bower_components/bootstrap/scss/jumbotron";
 //@import "../../bower_components/bootstrap/scss/alert";
 //@import "../../bower_components/bootstrap/scss/progress";
 //@import "../../bower_components/bootstrap/scss/media";
-@import "../../bower_components/bootstrap/scss/list-group";
+//@import "../../bower_components/bootstrap/scss/list-group";
 //@import "../../bower_components/bootstrap/scss/responsive-embed";
 //@import "../../bower_components/bootstrap/scss/close";
 
@@ -46,23 +46,46 @@
 //@import "../../bower_components/bootstrap/scss/carousel";
 
 // Utility classes
-@import "../../bower_components/bootstrap/scss/utilities";
-@import "../../bower_components/bootstrap/scss/utilities-spacing";
-@import "../../bower_components/bootstrap/scss/utilities-responsive";
+//@import "../../bower_components/bootstrap/scss/utilities";
+//@import "../../bower_components/bootstrap/scss/utilities-spacing";
+//@import "../../bower_components/bootstrap/scss/utilities-responsive";
 
 
 
 // NX Helper Classes
-@import "nx-helpers/nx-radiocheckbox";
-@import "nx-helpers/nx-mediaqueries";
-@import "nx-helpers/nx-spacerclasses";
-@import "nx-helpers/nx-colorclasses";
+//@import "nx-helpers/nx-radiocheckbox";
+//@import "nx-helpers/nx-mediaqueries";
+//@import "nx-helpers/nx-spacerclasses";
+//@import "nx-helpers/nx-colorclasses";
+
+*, ::before, ::after { box-sizing: inherit; }
+html { font-family: sans-serif; box-sizing: border-box; font-size: 16px; -webkit-tap-highlight-color: transparent; }
+body { margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.5; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); }
+h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 0.5rem; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; }
+h1, .h1, h2, .h2, h3, .h3 { margin-bottom: 0.5rem; }
+h2, .h2 { font-size: 2rem; }
+.list-group { padding-left: 0px; margin-bottom: 0px; }
+.list-group-item { position: relative; display: block; padding: 0.75rem 1.25rem; margin-bottom: -0.0625rem; border: 0.0625rem solid rgb(221, 221, 221); background-color: rgb(255, 255, 255); }
+.list-group-item:first-child { border-top-right-radius: 0.25rem; border-top-left-radius: 0.25rem; }
+h4, .h4, h5, .h5, h6, .h6 { margin-bottom: 0.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+.list-group-item-text { margin-bottom: 0px; line-height: 1.3; }
+.list-group-item-heading { margin-top: 0px; margin-bottom: 5px; }
+.list-group-item:last-child { margin-bottom: 0px; border-bottom-right-radius: 0.25rem; border-bottom-left-radius: 0.25rem; }
+.form-group { margin-bottom: 15px; }
+label { display: inline-block; margin-bottom: 0.5rem; }
+button, input, optgroup, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; margin: 0px; }
+input { line-height: normal; }
+input, button, select, textarea { margin: 0px; line-height: inherit; }
+.form-control { display: block; width: 100%; padding: 0.375rem 0.75rem; font-size: 1rem; line-height: 1.5; color: rgb(85, 85, 85); border: 0.0625rem solid rgb(204, 204, 204); border-radius: 0.25rem; background-image: none; background-color: rgb(255, 255, 255); }
+.btn { display: inline-block; font-weight: normal; text-align: center; white-space: nowrap; vertical-align: middle; touch-action: manipulation; cursor: pointer; border: 0.0625rem solid transparent; padding: 0.375rem 1rem; font-size: 1rem; line-height: 1.5; border-radius: 0.25rem; }
+.btn-primary { color: rgb(255, 255, 255); border-color: rgb(2, 117, 216); background-color: rgb(2, 117, 216); }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
 
 // [injector]
 @import '../2_molecules/Food/Food.scss';
 @import '../2_molecules/FoodForm/FoodForm.scss';
 @import '../3_organisms/FoodList/FoodList.scss';
-@import '../3_organisms/footer/footer.scss';
-@import '../3_organisms/header/header.scss';
 // [endinjector]
 

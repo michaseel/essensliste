@@ -5,8 +5,16 @@
  * @see {@link http://github.com/documentation|Specification}
  */
 
+.FoodFormContainer {
+  flex: 0 0 280px;
+  background: #efefef;
+  padding: 20px;
+}
+
 .FoodForm {
+
   .col-sm-12 {
     margin-top: 20px;
   }
+  margin-bottom: 40px;
 }

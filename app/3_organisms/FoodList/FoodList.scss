@@ -5,7 +5,26 @@
  * @see {@link http://github.com/documentation|Specification}
  */
 
+.FoodListContainer {
+  flex: 1 1 50%;
+  min-width: 200px;
+  padding: 20px;
+}
+
 .FoodList {
   margin-top: 30px;
   margin-bottom: 30px;
+
+}
+
+.foodListApp {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+#content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
