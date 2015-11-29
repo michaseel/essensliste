@@ -1,0 +1,12 @@
+{
+  "name": "essensliste",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "bootstrap": "^4",
+    "react": "~0.14.2",
+    "firebase": "~2.3.1",
+    "reactfire": "~0.5.1"
+  },
+  "devDependencies": {}
+}

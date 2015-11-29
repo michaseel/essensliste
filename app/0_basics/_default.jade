@@ -1,0 +1,68 @@
+//- [injector:jademixins]
+include /3_organisms/FoodList/_FoodList.jade
+include /3_organisms/footer/_footer.jade
+include /3_organisms/header/_header.jade
+//- [endinjector]
+doctype html
+html
+  head
+    title=yaml.basics.meta.title
+    meta(charset='UTF-8')
+    meta(content=yaml.basics.meta.description, name='description')
+    meta(content=yaml.basics.meta.keywords, name='keywords')
+    meta(content='3 days', name='revisit-after')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name='viewport', content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
+    block meta
+
+    link(type="text/plain" rel="author" href="#{path}humans.txt")
+
+    block head
+
+    link(href='#{path}0_basics/main.css', rel='stylesheet')
+    if level == 0
+      // build:css(bower_components) 0_basics/vendor.css
+    else if level == 1
+      // build:css(bower_components) ../0_basics/vendor.css
+    else
+      // build:css(bower_components) ../../0_basics/vendor.css
+    // bower:css
+    // endbower
+    // endbuild
+
+    noscript
+      link(href='#{path}0_basics/nojs.css', rel='stylesheet')
+    <!--[if lte IE 9]>
+    <link href="#{path}0_basics/ie9.css" rel="stylesheet">
+    <![endif]-->
+  body(class=page)
+    +header
+    block content
+    +footer
+    if level == 0
+      // build:js({.,.tmp,bower_components}) 0_basics/controller.js
+    else if level == 1
+      // build:js({.,.tmp,bower_components}) ../0_basics/controller.js
+    else
+      // build:js({.,.tmp,bower_components}) ../../0_basics/controller.js
+
+    // bower:js
+    script(src='/react/react.js')
+    script(src='/firebase/firebase.js')
+    script(src='/reactfire/dist/reactfire.js')
+    // endbower
+
+    // [injector:js]
+    <script src="/2_molecules/Food/Food.js"></script>
+    <script src="/2_molecules/FoodForm/FoodForm.js"></script>
+    <script src="/3_organisms/FoodList/FoodList.js"></script>
+    <script src="/3_organisms/footer/footer.js"></script>
+    <script src="/3_organisms/header/header.js"></script>
+    // [endinjector]
+
+    script(src='/0_basics/controller.js')
+    // endbuild
+
+    script.
+
+
