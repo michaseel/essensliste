@@ -35,6 +35,15 @@ html
 
     block content
 
+    //- bower:js
+    script(src='/react/react.js')
+    script(src='/firebase/firebase.js')
+    script(src='/reactfire/dist/reactfire.js')
+    //- endbower
+    script(src='https://fb.me/react-0.13.3.js')
+    script(src='https://cdn.firebase.com/js/client/2.3.2/firebase.js')
+    script(src='https://cdn.firebase.com/libs/reactfire/0.5.1/reactfire.min.js')
+
     if level == 0
       // build:js({.,.tmp,bower_components}) 0_basics/controller.js
     else if level == 1
@@ -42,11 +51,7 @@ html
     else
       // build:js({.,.tmp,bower_components}) ../../0_basics/controller.js
 
-    // bower:js
-    script(src='/react/react.js')
-    script(src='/firebase/firebase.js')
-    script(src='/reactfire/dist/reactfire.js')
-    // endbower
+
 
     // [injector:js]
     <script src="/2_molecules/Food/Food.js"></script>
