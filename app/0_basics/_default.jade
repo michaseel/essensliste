@@ -1,19 +1,13 @@
 //- [injector:jademixins]
-include /3_organisms/FoodList/_FoodList.jade
 //- [endinjector]
 doctype html
 html
   head
     title=yaml.basics.meta.title
     meta(charset='UTF-8')
-    meta(content=yaml.basics.meta.description, name='description')
-    meta(content=yaml.basics.meta.keywords, name='keywords')
     meta(content='3 days', name='revisit-after')
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name='viewport', content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1")
-    block meta
-
-    link(type="text/plain" rel="author" href="#{path}humans.txt")
 
     block head
 
@@ -33,7 +27,6 @@ html
 
     block content
 
-
     script(src='https://fb.me/react-0.14.3.min.js')
     script(src='https://fb.me/react-dom-0.14.3.min.js')
     script(src='https://cdn.firebase.com/js/client/2.3.2/firebase.js')
@@ -46,8 +39,6 @@ html
     else
       // build:js({.,.tmp,bower_components}) ../../0_basics/controller.js
 
-
-
     // [injector:js]
     <script src="/2_molecules/Food/Food.js"></script>
     <script src="/2_molecules/FoodForm/FoodForm.js"></script>
@@ -56,7 +47,5 @@ html
 
     script(src='/0_basics/controller.js')
     // endbuild
-
-    script.
 
 

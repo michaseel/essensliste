@@ -10,6 +10,13 @@ var FoodBox = React.createClass({
     this.firebaseRefs["data"].push(food);
   },
 
+  handleFoodRemove: function(fbkey) {
+    // Here we push the update out to Firebase and let ReactFire update this.state.data
+
+    console.log(fbkey);
+
+  },
+
   getInitialState: function() {
     return {
       data: []
@@ -20,15 +27,19 @@ var FoodBox = React.createClass({
     // Here we bind the component to Firebase and it handles all data updates,
     // no need to poll as in the React example.
     this.bindAsArray(new Firebase(firebaseUrl + "foodListApp"), "data");
+    this.bindAsArray(new Firebase(firebaseUrl + "date"), "date");
   },
 
   render: function() {
+    console.log(JSON.stringify(this.state.data));
+
+    var nextDate = this.state.date;
     return (
       <div className="foodListApp">
 
         <section className="FoodListContainer">
-          <h2>Essensliste</h2>
-          <FoodList data={this.state.data} />
+          <h2>Essensliste {nextDate.toString()} </h2>
+          <FoodList onFoodRemove={this.handleFoodRemove} data={this.state.data} />
         </section>
 
         <aside className="FoodFormContainer">

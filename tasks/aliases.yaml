@@ -24,9 +24,9 @@ build:
   - useminPrepare
   - concat
   - uglify
-  - htmlmin
   - rev
   - usemin
+  - htmlmin
   - inline
   - copy:ghPages
 

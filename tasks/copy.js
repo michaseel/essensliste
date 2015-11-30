@@ -22,7 +22,8 @@ module.exports = {
       dest: '<%= folders.dist %>',
       src: [
         '**/*.css',
-        '**/*.map'
+        '**/*.map',
+        '{,*/,**/}*.html'
       ]
     }]
   },

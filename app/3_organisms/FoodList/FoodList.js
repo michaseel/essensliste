@@ -5,9 +5,14 @@
  * @see {@link http://github.com/documentation|Specification}
  */
 let FoodList = React.createClass({
+  handleRemove: function(food) {
+    this.props.onFoodRemove(food);
+    return false;
+  },
   render: function() {
-    var foodNodes = this.props.data.map(function (food, index) {
-      return <Food key={index} author={food.author}>{food.text}</Food>;
+    var foodNodes = this.props.data.map((food, index) => {
+      console.log(food['.key']);
+      return <Food onFoodRemove={this.handleRemove} key={index} fbkey={food['.key']} author={food.author} >{food.text}</Food>;
     });
     if(!foodNodes.length){
       return(

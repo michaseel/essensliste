@@ -18,15 +18,14 @@ module.exports = {
       processors: [
         require('autoprefixer')({
           browsers: [
-            'Android 2.3',
-            'Android >= 4',
-            'Chrome >= 35',
-            'Firefox >= 31',
+            'Android >= 4.3',
+            'Chrome >= 42',
+            'Firefox >= 40',
             'Edge >= 12',
-            'Explorer >= 9',
-            'iOS >= 7',
-            'Opera >= 12',
-            'Safari >= 7.1'
+            'Explorer >= 11',
+            'iOS >= 8',
+            'Opera >= 30',
+            'Safari >= 8'
           ]
         }),
         require('cssnano')() // minify the result
@@ -34,19 +33,12 @@ module.exports = {
     }
   },
   server: {
+    src: ['<%= folders.tmp %>/{,*/,**/}*.css'],
     options: {
       processors: [
         require('autoprefixer')({
           browsers: [
-            'Android 2.3',
-            'Android >= 4',
-            'Chrome >= 35',
-            'Firefox >= 31',
-            'Edge >= 12',
-            'Explorer >= 9',
-            'iOS >= 7',
-            'Opera >= 12',
-            'Safari >= 7.1'
+            'last 2 versions'
           ]
         })
       ]

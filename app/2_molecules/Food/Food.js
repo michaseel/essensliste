@@ -5,6 +5,10 @@
  * @see {@link http://github.com/documentation|Specification}
  */
 let Food = React.createClass({
+  handleRemove: function() {
+    this.props.onFoodRemove(this.props.fbkey);
+    return false;
+  },
   render: function() {
     return (
       <div className="Food list-group-item">
