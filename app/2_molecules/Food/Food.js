@@ -14,6 +14,8 @@ let Food = React.createClass({
       <div className="Food list-group-item">
         <h5 className="list-group-item-text">{this.props.children.toString()}</h5>
         <span className="author list-group-item-heading">von: {this.props.author}</span>
+        <br />
+        <button className="remove btn" aria-label="Eintrag löschen" onClick={this.handleRemove}></button>
       </div>
     );
   }

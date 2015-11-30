@@ -29,3 +29,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.spinner {
+  height: 30px;
+  width: 30px;
+  animation: rotate-forever .8s infinite cubic-bezier(0.225, 0.180, 0.330, 0.755);
+  border: 6px solid $brand-primary;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@keyframes rotate-forever {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

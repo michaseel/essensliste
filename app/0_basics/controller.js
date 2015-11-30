@@ -1,6 +1,7 @@
 const kbe = kbe || {};
 
 var firebaseUrl = "https://essen.firebaseio.com/";
+var loaded = false;
 
 var FoodBox = React.createClass({
   mixins: [ReactFireMixin],
@@ -11,10 +12,11 @@ var FoodBox = React.createClass({
   },
 
   handleFoodRemove: function(fbkey) {
-    // Here we push the update out to Firebase and let ReactFire update this.state.data
-
-    console.log(fbkey);
-
+    this.firebaseRefs["data"].child(fbkey).remove(function(error) {
+      if (error) {
+        console.log(error);
+      }
+    });
   },
 
   getInitialState: function() {
@@ -27,28 +29,41 @@ var FoodBox = React.createClass({
     // Here we bind the component to Firebase and it handles all data updates,
     // no need to poll as in the React example.
     this.bindAsArray(new Firebase(firebaseUrl + "foodListApp"), "data");
-    this.bindAsArray(new Firebase(firebaseUrl + "date"), "date");
+    //this.bindAsArray(new Firebase(firebaseUrl + "test"), "date");
   },
 
   render: function() {
-    console.log(JSON.stringify(this.state.data));
 
     var nextDate = this.state.date;
-    return (
-      <div className="foodListApp">
+    console.log(nextDate);
 
-        <section className="FoodListContainer">
-          <h2>Essensliste {nextDate.toString()} </h2>
-          <FoodList onFoodRemove={this.handleFoodRemove} data={this.state.data} />
-        </section>
+    new Firebase(firebaseUrl).on("value", function(snapshot) {
+      loaded = true;
+    });
 
-        <aside className="FoodFormContainer">
-          <h2>Neuer Eintrag</h2>
-          <FoodForm onFoodSubmit={this.handleFoodSubmit} />
-        </aside>
+    if (!loaded) {
+      return (
+        <div className="foodListApp">
+          <div className="spinner"></div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="foodListApp">
 
-    </div>
-    );
+          <section className="FoodListContainer">
+            <h2>Essensliste</h2>
+            <FoodList onFoodRemove={this.handleFoodRemove} data={this.state.data}/>
+          </section>
+
+          <aside className="FoodFormContainer">
+            <h2>Neuer Eintrag</h2>
+            <FoodForm onFoodSubmit={this.handleFoodSubmit}/>
+          </aside>
+
+        </div>
+      );
+    }
   }
 });
 
