@@ -37,6 +37,15 @@ module.exports = {
         'index.html',
         '.htaccess'
       ]
-    }]
+    },
+      {
+        expand: true,
+        dot: true,
+        cwd: '<%= folders.tmp %>',
+        dest: '.',
+        src: [
+          'serviceworker.js'
+        ]
+      }]
   }
 };
